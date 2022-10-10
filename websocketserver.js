@@ -1,5 +1,7 @@
 import WebSocket, { WebSocketServer } from 'ws';
 import { randomUUID } from 'crypto';
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const clients = new Map(); // has to be a Map instead of {} due to non-string keys
 const wss = new WebSocketServer({ port: 8080 }); // initiate a new server that listens on port 8080
 
